@@ -1,0 +1,46 @@
+{
+  "name": "lit-app-seed",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint --ext .js . --ignore-path .gitignore",
+    "format": "eslint --ext .js . --fix --ignore-path .gitignore",
+    "build": "run-s clean build:dist",
+    "build:dist": "rollup -c rollup.config.js",
+    "build:watch": "rollup -c rollup.config.js --watch",
+    "start": "run-p build:watch serve",
+    "serve": "light-server -s dist -p 8000 --historyindex /index.html --no-reload",
+    "release": "np --no-publish --branch \"main\"",
+    "test": "",
+    "emulate": "firebase emulators:start"
+  },
+  "keywords": [],
+  "author": "Habeeb Hooshmand <habeeb.hooshmand@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^2.0.0-rc.2",
+    "lit-redux-router": "^0.19.0",
+    "pwa-helpers": "^0.9.1",
+    "redux": "^4.1.0"
+  },
+  "devDependencies": {
+    "@open-wc/building-rollup": "^1.10.0",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-lit": "^1.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "light-server": "^2.9.1",
+    "np": "^7.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.55.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-gzip": "^2.5.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
